@@ -47,8 +47,8 @@ $(document).ready(function() {
 $("#submit-button").click(function(){
 	var zipCode = $("#zip-field")[0].value
   
-	var apiURL = "https://api.meetup.com/find/groups?photo-host=public&text=Anxiety+'&zip="+zipCode+"
-  &page=10&key=754c59a5a3b631c702c571330643e36"
+	var apiURL = "https://api.meetup.com/find/groups?photo-host=public&text=Anxiety+'&zip="+zipCode+
+  "&page=10&key=754c59a5a3b631c702c571330643e36"
   //Making an Ajax call & appending the results to the html results id
 	$.ajax({url: apiURL, dataType:"jsonp"}).done(function(res){
 		$("#results").empty(); //edit1: cleared data from results div
