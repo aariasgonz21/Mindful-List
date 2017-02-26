@@ -47,7 +47,7 @@ $(document).ready(function() {
   }
 
   function depressionVideos(){
-
+  		
   }
 
   function addictionVideos(){
