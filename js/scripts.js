@@ -44,11 +44,11 @@ $(document).ready(function() {
       }, 2000);
   }
 */
-$("#submit-button").click(function(){
-	var zipCode = $("#zip-field")[0].value
+$("#meetupBtn").click(function(){
+	var zipCode = 19102
   
-	var apiURL = "https://api.meetup.com/find/groups?photo-host=public&text=Anxiety+'&zip="+zipCode+
-  "&page=10&key=754c59a5a3b631c702c571330643e36"
+	var apiURL = "https://api.meetup.com/find/groups?photo-host=public&text=anxiety&zip="+
+                zipCode+"&page=10&key=754c59a5a3b631c702c571330643e36"
   //Making an Ajax call & appending the results to the html results id
 	$.ajax({url: apiURL, dataType:"jsonp"}).done(function(res){
 		$("#results").empty(); //edit1: cleared data from results div
@@ -57,11 +57,21 @@ $("#submit-button").click(function(){
 				    $("#results").append(output(res.data[i]));
 			}
 	});
-$("#zip-field")[0].value = "";
 return false;
 
 });
+
+function videoParse(){
+  $('#videoBtn').click(function(){
+    window.location="one.html";
+  });
+}
+
 });
+
+
+
+
 
 
     /*$('html, body').animate({
