@@ -36,19 +36,14 @@ $(document).ready(function() {
       return outputString;
   };
 
-  function groups(illness){
-    $('#results').empty();
-    var apiURL = "https://api.meetup.com/find/groups?photo-host=public&text="+illness+'&zip='+
-                +"&page=10&key=754c59a5a3b631c702c571330643e36"
-
-    $.ajax({url: apiURL, dataType:"jsonp"}).done(function(res){
-      for (var i = 0; i < res.data.length; i++) {
-           // console.log(res.data[i]); //edit4: line was deemed more for debugging 
-            $("#results").append(output(res.data[i]));
-  }
-
   function anxietyVideos(){
 
+    var anxietyVid = '<h3> 10 Most Common Anxiety Symptoms - Mental Health </h3>'+
+      '<iframe width="560" height="315" src="https://www.youtube.com/embed/SDPW3pdlnLk" frameborder="0" allowfullscreen></iframe>'+
+      '<h3> HOW TO OVERCOME DEPRESSION | ANXIETY | HARD TIMES</h3>'+
+      '<iframe width="560" height="315" src="https://www.youtube.com/embed/kKcRSboPgU4" frameborder="0" allowfullscreen></iframe>'
+
+    return anxietyVid1;
   }
 
   function depressionVideos(){
@@ -94,6 +89,12 @@ $(document).ready(function() {
       }, 2000);
   }
 
+$("#zip-submit").click(function(){
+
+    $('html, body').animate({
+        scrollTop: $("#mentalIllnessBtn").offset().top
+      }, 2000);
+
   $("#anxietyBtn").click(function(){
      scrollDown();
      var illness = 'anxiety';
@@ -127,5 +128,5 @@ $(document).ready(function() {
       groups(illness);
   });
 
-
+});
 });
